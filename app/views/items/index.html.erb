@@ -7,13 +7,16 @@
     <tr>
       <th>Name</th>
       <th>Price</th>
+      <th>PAYMENT</th>
+
     </tr>
   </thead>
   <tbody>
     <% @items.each do |item| %>
       <tr>
         <td><%= item %></td>
-        <td><%= item.price %></td>
+        <td><%=number_to_currency item.price/100 %></td>
+        <td><%= button_to "Buy now!", checkout_create_path, params: [id: item.id],  method: :post, data: {turbo: false} %></td>
 
        <td><%= link_to "show", item%></td>
       </tr>
