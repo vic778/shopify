@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item %></td>
+        <td><%= item.price %></td>
+
+       <td><%= link_to "show", item%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+
+   <%= link_to "New Item", new_item_path %>
