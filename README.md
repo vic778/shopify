@@ -1,8 +1,13 @@
 # SHOPIFY
 
-> Shopify is an E-commerce website where users can buy stuff. It has a payement method using `Strip` and it has a webhooks controler to check if the payemt was succed and incres the sales_acount of an item after the payemnt. This API is made these models:
+> Shopify is an E-commerce website where users can buy stuff. It has a payement method using `Strip` and it has a webhooks controler to check if the payemt was succed and incres the sales_acount of an item after the payemnt. `i Used rails credentials to keep my keys secured loool`. This API is made these models:
 
   - Item
+
+![screen](app/assets/images/screen.png)
+
+it has a webhooks controler to check if the payemt was succed 
+![screen](app/assets/images/screen1.png)
 
 ### Deployment
 [Heroku]()
