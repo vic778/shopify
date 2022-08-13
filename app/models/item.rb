@@ -5,4 +5,8 @@ class Item < ApplicationRecord
     def to_s
         name
     end
+
+    def to_i
+        price/100
+    end
 end
