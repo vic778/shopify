@@ -1,24 +1,76 @@
-# README
+# SHOPIFY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Shopify is an E-commerce website where users can buy stuff. It has a payement method using `Strip` and it has a webhooks controler to check if the payemt was succed and incres the sales_acount of an item after the payemnt. `i Used rails credentials to keep my keys secured loool`. This API is made these models:
 
-Things you may want to cover:
+  - Item
 
-* Ruby version
+![screen](app/assets/images/screen.png)
 
-* System dependencies
+it has a webhooks controler to check if the payemt was succed 
+![screen](app/assets/images/screen1.png)
 
-* Configuration
+### Deployment
+[Heroku]()
+## Built With
 
-* Database creation
+- Rails
+- Ruby 
+- Postgresql
+- Stripe
+- Heroku
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+Here are the steps to follow in order to get this project on your local computer.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Prerequisites
 
-* Deployment instructions
+`rails v7.0.2 +`
 
-* ...
+`ruby v3.0.2 +`
+
+### Setup
+
+clone this repo by typing `git clone https://github.com/vic778/shopify`
+
+### Install
+
+install the dependencies by typing `bundle install`
+
+### Usage
+
+start the local server by running `rails s`
+
+### Testing
+
+run the tests by typing `bundle exec rspec`
+
+
+### Documentation
+
+
+## Author
+
+👤 **Victor Barh**
+
+- GitHub: [@Vvic778](https://github.com/vic778)
+- Twitter: [@victoirBarh](https://twitter.com/)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/victoir-barh)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+ N/A
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
