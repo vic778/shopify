@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   # resources :checkouts, only: [:create]
   # post "checkout/create", to: "checkout#create"
   post "checkout/create", to: "checkout#create"
+  get "success", to: "checkout#success"
+  get "cancel", to: "checkout#cancel"
   resources :webhooks, only: [:create]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
+  
+  post "items/add_to_cart/:id", to: "items#add_to_cart", as: "add_to_cart"
+  delete "items/remove_from_cart/:id", to: "items#remove_from_cart", as: "remove_from_cart"
 end

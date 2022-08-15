@@ -1,6 +1,6 @@
 # SHOPIFY
 
-> Shopify is an E-commerce website where users can buy stuff. It has a payement method using `Strip` and it has a webhooks controler to check if the payemt was succed and incres the sales_acount of an item after the payemnt. `i Used rails credentials to keep my keys secured loool`. This API is made these models:
+> Shopify is an E-commerce website where users can buy stuff. It has a payement method using `Strip` and it has a webhooks controler to check if the payemt was succed and incres the sales_acount of an item after the payemnt. the current_user is a customer and when the admin create an itm it will create autoamaticaly a stripe id for that product into the STRIPE DB. `i Used rails credentials to keep my keys secured loool`. This API is made these models:
 
   - Item
 
