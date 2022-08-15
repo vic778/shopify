@@ -20,15 +20,11 @@
   <% if current_user %>
     <%= link_to current_user.email, edit_user_registration_path %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <%
-=begin%>
- <%= current_user.stripe_customer_id%> 
-<%
-=end%>
+
   <% else %>
     <%= link_to "Login", new_user_session_path %>
     <%= link_to "Register", new_user_registration_path %>
-    <%end%>
+  <%end%>
 
   <hr>
   <h1>Shopping Cart</h1>
@@ -51,6 +47,7 @@
       
           </tr>
         <% end %>
+        <%= button_to "Buy now!", checkout_create_path,  method: :post, data: {turbo: false} %>
       </tbody>
     </table>
     <%end%>
