@@ -1,7 +1,6 @@
 class CheckoutController < ApplicationController
 
     def create
-    
         @session = Stripe::Checkout::Session.create({
             customer: current_user.stripe_customer_id,
             payment_method_types: ['card'],
@@ -30,6 +29,5 @@ class CheckoutController < ApplicationController
   end
 
   def cancel
-    redirect_to root_path
   end
 end
