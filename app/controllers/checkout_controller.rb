@@ -6,6 +6,7 @@ class CheckoutController < ApplicationController
             customer: current_user.stripe_customer_id,
             payment_method_types: ['card'],
             line_items: [{
+
                 price: @item.stripe_price_id,
               quantity: 1
             }],
@@ -25,8 +26,8 @@ class CheckoutController < ApplicationController
     end
 
   def success
-    session_with_expand = Stripe::Checkout::Session.retrieve({id: params[:session_id], expand: ['line_items']})
-    session_with_expand.line_items.data.each do |line_item|
+    session_with_expand = Stripe::Checkout::Session.retrieve({id: params[:session_id], expand: ['list_line_items']})
+    session_with_expand.list_line_items.data.each do |line_item|
       item = Item.find_by(stripe_product_id: line_item.price.product)
       item.increment!(:sales_count)
     end
