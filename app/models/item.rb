@@ -6,7 +6,9 @@ class Item < ApplicationRecord
         name
     end
 
-    def to_i
-        price/100
+    after_create do
+        product = Stripe::Product.create(name: name)
+        price = Stripe::Price.create(product: product.id, unit_amount: self.price, currency: 'usd')
+        update(stripe_product_id: product.id)
     end
 end
