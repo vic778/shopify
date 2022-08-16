@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
     validates :name, presence: true
     validates :price, presence: true
+    monetize :price, as: "price_cents"
 
     def to_s
         name
