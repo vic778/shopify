@@ -21,10 +21,15 @@ class CheckoutController < ApplicationController
     end
 
   def success
-    session_with_expand = Stripe::Checkout::Session.retrieve({id: params[:session_id], expand: ['line_items']})
-    session_with_expand.line_items.data.each do |line_item|
-      item = Item.find_by(stripe_product_id: line_item.price.product)
-      item.increment!(:sales_count)
+    if params[:session_id].present?
+      session[:cart] = []
+      @session_with_expand = Stripe::Checkout::Session.retrieve({id: params[:session_id], expand: ['line_items']})
+      @session_with_expand.line_items.data.each do |line_item|
+        item = Item.find_by(stripe_product_id: line_item.price.product)
+        item.increment!(:sales_count)
+      end
+    else
+    redirect_to cancel_path, alert: 'Transaction was cancelled'
     end
   end
 

@@ -1,0 +1,24 @@
+<h1>Shopping Cart</h1>
+<% if @cart.empty? %>
+    <p>Your cart is empty.</p>
+  <% else %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+  
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart.each do |item| %>
+          <tr>
+            <td><%= item.name %></td>
+            <td><%= item.price %></td>
+      
+          </tr>
+        <% end %>
+        <%= button_to "Buy now!", checkout_create_path,  method: :post, data: {turbo: false} %>
+      </tbody>
+    </table>
+<%end%>
