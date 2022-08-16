@@ -1,1 +1,12 @@
     <h3>PAYMENT SUCCESSFULLY DONE</h3>
+
+    Checkout status: <%= @session_with_expand.payment_status %>
+    <br>
+    <%= @session_with_expand.amount_total/100.to_f %>
+    <%= @session_with_expand.currency %>
+
+    <% @session_with_expand.line_items.data.each do |line_item| %>
+       <% item = Item.find_by(stripe_product_id: line_item.price.product) %>
+       <br>
+         <%= item.name %>
+    <%end%>
