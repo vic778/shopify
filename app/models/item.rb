@@ -1,4 +1,8 @@
 class Item < ApplicationRecord
+  has_one_attached :image
+  has_many_attached :pictures
+  has_rich_text :body
+
   validates :name, presence: true
   validates :price, presence: true
   monetize :price, as: "price_cents"
@@ -25,5 +29,9 @@ class Item < ApplicationRecord
       product.price stripe_price_id
       product.quantity 1
     end
+  end
+
+  def image_as_thumbnail
+    image.variant(resize_to_limit: [300, 300]).processed
   end
 end
