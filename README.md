@@ -1,13 +1,19 @@
 # SHOPIFY
 
-> Shopify is an E-commerce website where users can buy stuff. It has a payement method using `Strip` and it has a webhooks controler to check if the payemt was succed and incres the sales_acount of an item after the payemnt. the current_user is a customer and when the admin create an itm it will create autoamaticaly a stripe id for that product into the STRIPE DB. `i Used rails credentials to keep my keys secured loool`. This API is made these models:
+> Shopify is an E-commerce website where users can buy stuff. It has a payement method using `Strip` and it has a webhooks controler to check if the payemt was succed and incres the sales_acount of an item after the payemnt. the current_user is a customer and when the admin create an itm it will create autoamaticaly a stripe id for that product into the STRIPE DB. it has a code promo for reduice the price. when you update the price of an item localy it will be updated into the stripe database. `i Used rails credentials to keep my keys secured loool`. This API is made these models:
 
   - Item
+  - Stripe checkout
+  - Sripe webooks
+  - Stripe Cart
 
-![screen](app/assets/images/screen.png)
+![screen](app/assets/images/screen4.png)
 
-it has a webhooks controler to check if the payemt was succed 
+it has a webhooks controler to check if the payemt was succed
 ![screen](app/assets/images/screen1.png)
+
+It has a code promo stuff. that makes it funy. i you wanna try `FRIEND50` or `RECRUTERS5`
+![screen](app/assets/images/screen2.png)
 
 ### Deployment
 [Heroku]()
@@ -16,7 +22,11 @@ it has a webhooks controler to check if the payemt was succed
 - Rails
 - Ruby 
 - Postgresql
+- Devise
 - Stripe
+- Active storage
+- Trix-rails
+- Money-rails
 - Heroku
 
 ## Getting Started
