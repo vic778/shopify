@@ -13,10 +13,10 @@ gem "sprockets-rails"
 gem "pg"
 
 # Additional gems
+gem 'activestorage', '~> 7.0', '>= 7.0.3.1'
 gem "devise"
 gem "money-rails"
 gem "stripe"
-gem 'activestorage', '~> 7.0', '>= 7.0.3.1'
 gem 'trix-rails', '~> 2.4'
 
 # Use the Puma web server [https://github.com/puma/puma]
