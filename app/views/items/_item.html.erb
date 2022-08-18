@@ -17,7 +17,7 @@
   <hr />
 
   <% item.pictures.each do |picture|%>
-    <%= link_to image_tag(picture), picture%>
+    <%= link_to image_tag(item.pictures_as_thumbnail(picture)), picture%>
   <%end%>
 
 </div>
