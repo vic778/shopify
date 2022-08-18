@@ -18,6 +18,7 @@ gem "devise"
 gem "money-rails"
 gem "stripe"
 gem 'trix-rails', '~> 2.4'
+gem 'vips', '~> 8.12', '>= 8.12.2'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
