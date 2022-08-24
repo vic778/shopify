@@ -110,10 +110,14 @@ GEM
       railties (>= 5.0.0)
     faker (2.22.0)
       i18n (>= 1.8.11, < 2)
+    ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -132,8 +136,9 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mini_magick (4.11.0)
     mini_mime (1.1.2)
-    minitest (5.16.2)
+    minitest (5.16.3)
     monetize (1.12.0)
       money (~> 6.12)
     money (6.16.0)
@@ -245,7 +250,17 @@ GEM
     rubocop-ast (1.21.0)
       parser (>= 3.1.1.0)
     ruby-progressbar (1.11.0)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (4.4.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -265,7 +280,10 @@ GEM
     stripe (7.0.0)
     strscan (3.0.4)
     thor (1.2.1)
+    tilt (2.0.11)
     timeout (0.3.0)
+    trix-rails (2.4.0)
+      rails (> 4.1)
     turbo-rails (1.1.1)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
@@ -296,6 +314,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activestorage (~> 7.0, >= 7.0.3.1)
+  bcrypt (~> 3.1.7)
   better_errors
   bootsnap
   capybara
@@ -303,6 +323,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   money-rails
@@ -313,11 +334,13 @@ DEPENDENCIES
   rails (~> 7.0.3, >= 7.0.3.1)
   rspec-rails
   rubocop
+  sassc-rails
   selenium-webdriver
   shoulda-matchers
   sprockets-rails
   stimulus-rails
   stripe
+  trix-rails (~> 2.4)
   turbo-rails
   tzinfo-data
   web-console

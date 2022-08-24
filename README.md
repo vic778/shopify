@@ -6,6 +6,7 @@
   - Stripe checkout
   - Sripe webooks
   - Stripe Cart
+  - Trix
 
 ![screen](app/assets/images/screen4.png)
 
